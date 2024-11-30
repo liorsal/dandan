@@ -244,6 +244,19 @@
             font-size: 1rem;
             font-weight: bold;
         }
+
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -258,9 +271,9 @@
         </div>
 
         <div class="message-box">
-            <textarea class="message-content" readonly>ירדניייייייייייי בוקר טוב חיימשליייייי ♥️😍😘
+            <textarea class="message-content" readonly>ירדנייייייייייייי בוקר טוב חיימשליייייייי ♥️😍😘
 Raise and shine capara 😎🤩
-מקווה שישנת מושי מושי ושאת מתעוררת כמו תמיד כוסית כמו מלאך וחמודה כמו תינוקת 
+מקווה שישנת מושי מושי ושא�� מתעוררת כמו תמיד כוסית כמו מלאך וחמודה כמו תינוקת 
 איזה כיף שאנחנו ביחד ? איזה כיף שאת בחיים שלי! 
 את מקסימה יפה ומוכשרת דואגת לי מעל ומעבר , מעלה לי חיוך כל יום וגם כשלא נותנת לי לישון בשקט כי אי יודע שיש שם את האחת שבשבילי תעשה הכל 🥰
 חיימשלי איזה כיף להיות בן זוג שלך !
@@ -285,22 +298,19 @@ Raise and shine capara 😎🤩
 
     <script>
         const images = [
-            'https://your-new-image-url-1.jpg',
-            'https://your-new-image-url-2.jpg',
-            'https://your-new-image-url-3.jpg',
-            // Add more image URLs as needed
+            'images/image1.jpg',
+            'images/image2.jpg',
+            'images/image3.png',
+            'images/image4.png',
+            'images/image5.jpg',
+            'images/image6.jpg',
+            'images/image7.jpg',
+            'images/image8.png',
+            'images/image9.jpg'
         ];
-
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-        }
 
         function createTimeline() {
             const timeline = document.getElementById('timeline');
-            shuffleArray(images);
             images.forEach((img, index) => {
                 const item = document.createElement('div');
                 item.className = `timeline-item ${index % 2 === 0 ? 'left' : 'right'}`;
@@ -314,8 +324,13 @@ Raise and shine capara 😎🤩
                 numberLabel.className = 'image-number';
                 numberLabel.textContent = `#${index + 1}`;
 
+                const caption = document.createElement('div');
+                caption.className = 'image-caption';
+                caption.textContent = 'love you a lot a lot';
+
                 item.appendChild(imgElement);
                 item.appendChild(numberLabel);
+                item.appendChild(caption);
                 timeline.appendChild(item);
             });
         }
