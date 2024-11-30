@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Love for Yardeni ♥</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #ff8787;
+            --text-color: #2c3e50;
+            --background-color: #fff5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, var(--background-color), #fff);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem 0;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item::after {
+            content: "love youuuuuu ♥";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 107, 107, 0.8);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-family: 'Dancing Script', cursive;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        .message-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+
+        .message-content {
+            width: 100%;
+            min-height: 200px;
+            border: none;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            resize: none;
+            padding: 1rem;
+            direction: rtl;
+            font-family: inherit;
+            background: transparent;
+        }
+
+        .song-button {
+            display: block;
+            width: fit-content;
+            margin: 2rem auto;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .song-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+
+            .message-box {
+                margin: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>My Love for Yardeni ♥</h1>
+        <p>Every moment with you is a blessing</p>
+    </header>
+
+    <div class="container">
+        <div class="gallery" id="gallery">
+            <!-- Images will be dynamically added here -->
+        </div>
+
+        <div class="message-box">
+            <textarea class="message-content" readonly>ירדנייייייייי בוקר טוב חיימשליייייי ♥️😍😘
+Raise and shine capara 😎🤩
+מקווה שישנת מושי מושי ושאת מתעוררת כמו תמיד כוסית כמו מלאך וחמודה כמו תינוקת 
+איזה כיף שאנחנו ביחד ? איזה כיף שאת בחיים שלי! 
+את מקסימה יפה ומוכשרת דואגת לי מעל ומעבר , מעלה לי חיוך כל יום וגם כשלא נותנת לי לישון בשקט כי אני יודע שיש שם את האחת שבשבילי תעשה הכל 🥰
+חיימשלי איזה כיף להיות בן זוג שלך !
+ממש זכיתי 😋
+שיהיה לך יום מקסים חיימשלי ♥️♥️♥️😍
+שלך 
+ליאור 😇</textarea>
+        </div>
+
+        <a href="https://www.youtube.com/watch?v=-BR3ziVDazM" target="_blank" class="song-button">
+            Listen to Our Song ♥
+        </a>
+    </div>
+
+    <footer class="footer">
+        Created by the best bf in the world ♥
+    </footer>
+
+    <script>
+        const images = [
+            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/c9d5bb29-af66-4529-a621-c852f5e6bd0f.JPG-nncP6YEyE3m2ole1LEeoPjUYg7Hs3p.jpeg',
+            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/7e0a200f-a6f9-4b23-b372-e88fed58ecbf.JPG-66mRFR9bB8OGdAjdeGbNQsfuXGP9Yw.jpeg',
+            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/6af1e405-8f09-4a88-b167-8a87a6f38571.JPG-4Bid6pKuigLAw7Yue8vQK3BA3wdHSO.jpeg',
+            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/6fedce15-fa34-4d77-a262-65fb69ff6be1.JPG-NCx37jcyMqVW3F7OxI3KMf39IzhWBa.jpeg',
+            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2fdd40af-cece-4799-a34b-5205d0258eeb.JPG-V3ugCWX5zvwtRxdauBWhttyydKYhgr.jpeg',
+            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/af657e70-878a-4200-b655-56c8c55f6ba5.JPG-LxNoMcFZuwl6CPEG2aoteSzWXlauB8.jpeg',
+            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/93bad8f4-122b-415c-8d1d-dc2b217dd736.JPG-XeVJtkasbXZGlYquNQQ2CQ0dUFfXr5.jpeg',
+            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dd0776da-ffe9-4e7d-bd57-80429bc6fc63.JPG-dEBHcyeNLvaObUWDHcYyF4KwlRo6zS.jpeg',
+            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/0ce35165-f7d3-4574-a03f-7672186e9e0d.JPG-SvM5Pp6o34BvWe4xXpE7K4tI7JhBU1.jpeg',
+            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/8a55acdf-d9ca-4fde-ad94-811358358fa0.JPG-AimQPZ1pbrPmzOXHvWljZxxH5bWgto.jpeg',
+            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_5208.PNG-9OpFUmZdDG56MWtAS2Ssp4VPcPWZIH.png',
+            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_5246.PNG-LxHTCBht2l5YK0ahHfCHy3jDtD84Vk.png',
+            'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_5382.PNG-zPEMF6NdiDtBxGSTVa7qlrEgVu6DF2.png'
+        ];
+
+        function createGallery() {
+            const gallery = document.getElementById('gallery');
+            images.forEach((img, index) => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                
+                const imgElement = document.createElement('img');
+                imgElement.src = img;
+                imgElement.alt = `Love moment ${index + 1}`;
+                imgElement.loading = 'lazy';
+                
+                item.appendChild(imgElement);
+                gallery.appendChild(item);
+            });
+        }
+
+        createGallery();
+    </script>
+</body>
+</html>
